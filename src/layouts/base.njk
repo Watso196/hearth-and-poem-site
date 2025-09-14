@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Hearth and Poem{% endblock %}</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">       
+</head>
+<body class="light animate-enabled">
+  <header>
+    <nav class="desktop">
+      <a href="/" aria-label="home">
+        <svg class="home-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+          <path d="M 24 2.9980469 C 23.042162 2.9980469 22.084349 3.3309171 21.316406 3.9941406 L 3.7871094 19.132812 A 1.0001 1.0001 0 0 0 3.7832031 19.134766 C 3.0520846 19.7701 2.8689211 20.781262 3.1621094 21.568359 C 3.4552977 22.355457 4.2597544 23 5.2304688 23 L 8 23 L 36 23 A 1.0001 1.0001 0 1 0 36 21 L 8 21 L 5.2304688 21 C 5.0811829 21 5.0689211 20.95454 5.0371094 20.869141 C 5.0052974 20.783741 4.9868251 20.739151 5.0957031 20.644531 L 22.623047 5.5058594 C 23.419161 4.8183063 24.580839 4.8183063 25.376953 5.5058594 L 32.345703 11.527344 A 1.0001 1.0001 0 0 0 34 10.769531 L 34 6 L 37 6 L 37 15.089844 A 1.0001 1.0001 0 0 0 37.345703 15.847656 L 42.904297 20.644531 C 43.013175 20.739151 42.994701 20.783738 42.962891 20.869141 C 42.931083 20.954543 42.918817 21 42.769531 21 L 40 21 A 1.0001 1.0001 0 0 0 39 22 L 39 42 C 39 42.56503 38.56503 43 38 43 L 31 43 C 30.43497 43 30 42.56503 30 42 L 30 32 C 30 30.354545 28.645455 29 27 29 L 21 29 C 19.354545 29 18 30.354545 18 32 L 18 42 C 18 42.56503 17.56503 43 17 43 L 10 43 C 9.4349698 43 9 42.56503 9 42 L 9 26 A 1.0001 1.0001 0 1 0 7 26 L 7 42 C 7 43.64497 8.3550302 45 10 45 L 17 45 C 18.64497 45 20 43.64497 20 42 L 20 32 C 20 31.445455 20.445455 31 21 31 L 27 31 C 27.554545 31 28 31.445455 28 32 L 28 42 C 28 43.64497 29.35503 45 31 45 L 38 45 C 39.64497 45 41 43.64497 41 42 L 41 23 L 42.769531 23 C 43.740246 23 44.544702 22.355457 44.837891 21.568359 C 45.131079 20.781262 44.947919 19.770146 44.216797 19.134766 A 1.0001 1.0001 0 0 0 44.212891 19.132812 L 39 14.632812 L 39 6 C 39 4.9045455 38.095455 4 37 4 L 34 4 C 32.904545 4 32 4.9045455 32 6 L 32 8.5859375 L 26.683594 3.9941406 C 25.915651 3.3309171 24.957838 2.9980469 24 2.9980469 z"></path>
+        </svg>
+      </a>
+      <div class="non-logo">
+        <a href="/">Poems</a>
+        <a href="/about/">Poet</a>
+        <div class="switch-container">
+          <svg class="switch-icon dark-mode-icon" width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 2L20 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 2L4 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 16L20 15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 16L4 15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 18H15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 21H14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.9998 3C7.9997 3 5.95186 4.95029 5.99985 8C6.02324 9.48689 6.4997 10.5 7.49985 11.5C8.5 12.5 9 13 8.99985 15H14.9998C15 13.0001 15.5 12.5 16.4997 11.5001L16.4998 11.5C17.4997 10.5 17.9765 9.48689 17.9998 8C18.0478 4.95029 16 3 11.9998 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle" aria-label="Light mode">
+            <span class="slider"></span>
+          </label>
+
+          <svg class="switch-icon animation-icon" width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.2319 2.28681C13.5409 2.38727 13.75 2.6752 13.75 3.00005V9.25005H19C19.2821 9.25005 19.5403 9.40834 19.6683 9.65972C19.7963 9.9111 19.7725 10.213 19.6066 10.4412L11.6066 21.4412C11.4155 21.7039 11.077 21.8137 10.7681 21.7133C10.4591 21.6128 10.25 21.3249 10.25 21.0001V14.7501H5C4.71791 14.7501 4.45967 14.5918 4.33167 14.3404C4.20366 14.089 4.22753 13.7871 4.39345 13.5589L12.3935 2.55892C12.5845 2.2962 12.923 2.18635 13.2319 2.28681Z"></path></svg>
+          <label class="switch">
+            <input type="checkbox" id="animationToggle" aria-label="Show animations">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="mobile">
+      <button id="menu-button" aria-label="menu">
+        <svg class="menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+          <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
+        </svg>
+      </button>
+      <dialog id="menu-dialog">
+        <button id="menu-close" aria-label="close menu">X</button>
+        <div class="nav-container">
+          <a href="/">Poems</a>
+          <a href="/about/">Poet</a>
+          <div class="switch-wrapper">
+            <div class="switch-container">
+              <svg class="switch-icon dark-mode-icon" width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 2L20 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 2L4 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 16L20 15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 16L4 15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 18H15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 21H14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.9998 3C7.9997 3 5.95186 4.95029 5.99985 8C6.02324 9.48689 6.4997 10.5 7.49985 11.5C8.5 12.5 9 13 8.99985 15H14.9998C15 13.0001 15.5 12.5 16.4997 11.5001L16.4998 11.5C17.4997 10.5 17.9765 9.48689 17.9998 8C18.0478 4.95029 16 3 11.9998 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <label class="switch">
+                <input type="checkbox" id="darkModeToggleMobile" aria-label="Light mode">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="switch-container">
+              <svg class="switch-icon animation-icon" width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.2319 2.28681C13.5409 2.38727 13.75 2.6752 13.75 3.00005V9.25005H19C19.2821 9.25005 19.5403 9.40834 19.6683 9.65972C19.7963 9.9111 19.7725 10.213 19.6066 10.4412L11.6066 21.4412C11.4155 21.7039 11.077 21.8137 10.7681 21.7133C10.4591 21.6128 10.25 21.3249 10.25 21.0001V14.7501H5C4.71791 14.7501 4.45967 14.5918 4.33167 14.3404C4.20366 14.089 4.22753 13.7871 4.39345 13.5589L12.3935 2.55892C12.5845 2.2962 12.923 2.18635 13.2319 2.28681Z"></path></svg>
+              <label class="switch">
+                <input type="checkbox" id="animationToggleMobile" aria-label="Show animations">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="/assets/js/theme-toggle.js"></script>
+  <script src="/assets/js/anim-toggle.js"></script>
+  <script src="/assets/js/page-load-anim.js"></script>
+  <script src="/assets/js/menu.js"></script>
+</body>
+<footer>
+  <p class="copyright">&copy; 2025 - hearth and poem</p>
+  <p class="footer-subtext">"we write to taste life twice"</p>
+</footer>
+</html>

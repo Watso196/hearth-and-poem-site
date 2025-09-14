@@ -1,0 +1,162 @@
+/* HOME HEADER */
+.home-heading {
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 100%;
+  margin-bottom: 0;
+}
+
+.heading-secondary {
+  display: block;
+  color: var(--orange);
+  box-sizing: border-box;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-color-secondary);
+}
+
+
+/* HOME SEARCH */
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.no-js-warning {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: block;
+    top: 1.5rem;
+    position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  width: 1em;
+  height: 1em;
+  color: var(--text-color-secondary);
+  pointer-events: none;
+}
+
+#poemSearch {
+  padding: .75rem 1rem .75rem 2.5rem; /* room for icon */
+  border: 1px solid var(--text-color-secondary);
+  background: var(--bg-color-secondary);
+  color: var(--text-color-secondary);
+  width: 100%;
+  max-width: 30em;
+  font-family: 'JetBrains Mono', sans-serif;
+
+  &::placeholder {
+    color: var(--text-color-secondary);
+    font-size: .9rem;
+  }
+
+  &:focus-visible {
+    border-color: var(--orange);
+  }
+}
+
+
+
+/* HOME POEM LIST */
+.poem-container article {
+  max-width: 100%;
+  margin-top: 40px;
+  margin-right: 25%;
+  padding: 25px;
+  position: relative;
+
+  background-image: var(--article-bg-primary);
+  border: 1px solid var(--article-border-color);
+
+  &:nth-of-type(2n) {
+    background-image: var(--article-bg-secondary);
+    margin-right: 0;
+    margin-left: 25%;
+  }
+
+  &:nth-of-type(3n) {
+    background-image: var(--article-bg-tertiary);
+  }
+
+  &:nth-of-type(4n) {
+    background-image: var(--article-bg-quartary);
+  }
+
+  h2 {
+    margin: 0;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover, a:focus {
+        color: var(--orange);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+    }
+  }
+
+  .date {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: .75rem;
+    color: var(--text-color-secondary);
+  }
+
+  .poem-line {
+    font-style: italic;
+    margin-top: .5rem;
+    margin-bottom: 0;
+
+    /* Target the last element of the set of elements with the poem-line class */
+    &:nth-last-child(1 of .poem-line)::after {
+        content: "...";
+    }
+  }
+
+  ul.tag-list {
+    list-style: none;
+    text-indent: 0;
+    display: flex;
+    margin-left: 0;
+    padding-left: 0;
+    color: var(--text-color-secondary);
+
+    & li {
+        padding: 5px;
+        margin-right: 10px;
+        font-family: 'JetBrains Mono', sans-serif;
+        font-size: .75rem;
+        border: 1px solid var(--tag-border-color);
+        width: fit-content;
+
+        &:before {
+            content: "#";
+        }
+    }
+  }
+
+  .read-more {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: .8rem;
+
+    & a {
+        text-decoration: none;
+        color: var(--orange);
+        text-shadow: var(--link-shadow);
+
+        &::after {
+            content: " \2192" / "visit poem page";
+        }
+    }
+  }
+
+}

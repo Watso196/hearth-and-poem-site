@@ -1,0 +1,27 @@
+/* For media queries only, so they are easy to find */
+/* MOBILE */
+@media (max-width: 700px) {
+    nav.desktop {
+        display: none;
+    }
+
+    nav.mobile {
+        display: block;
+    }
+
+    /* Using nth child to match specificity and override other styles */
+    .poem-container article:nth-child(n) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-enabled .heading-secondary.animated-heading-text{
+        animation: none;
+    } 
+
+    .on-load-trigger.animate-enabled .poem-container article {
+        animation: none;
+    }
+}

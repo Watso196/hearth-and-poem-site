@@ -1,0 +1,51 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<h1 class="home-heading">HEARTH & 
+<span class="heading-secondary animated-heading-text">POEM</span></h1>
+
+<div class="poem-container">
+  <form role="search" aria-label="Search poems" id="poemSearchForm">
+    <label class="search-label" for="poemSearch" hidden>Search poems</label>
+    <noscript>
+      <p class="no-js-warning" role="alert">
+        ⚠️<span class="sr-only">Warning:</span> Search requires JavaScript to work. Please enable JavaScript for the best experience.
+      </p>
+    </noscript>
+    <div class="search-wrapper">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" fill="none" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" />
+      </svg>
+      <input type="search" id="poemSearch" placeholder="search for embers..." aria-label="Search for embers" aria-describedby="searchStatus">
+    </div>
+    <span id="searchStatus" class="sr-only" aria-live="polite" aria-atomic="true"></span>
+  </form>
+  <section id="poemList">
+    {% for poem in collections.poems %}
+      <article class="poem-list-item">
+        <h2>
+          <a href="{{ poem.url }}">
+            {{ poem.data.title }}
+          </a>
+        </h2>
+        <p class="date">
+          <time datetime="{{ poem.date }}">
+            {{ poem.date | date("MMMM d, yyyy") }}
+          </time>
+        </p>
+        {% for line in poem.data.excerpt %}
+          <p>{{ line }}</p>
+        {% endfor %}
+        <ul class="tag-list">
+          {% for tag in poem.data.tags %}
+            <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script src="/assets/js/fuse.js"></script>
+{% endblock %}

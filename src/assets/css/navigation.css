@@ -1,0 +1,185 @@
+header {
+  display: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 70px;
+  border: none;
+  border-bottom: 1px solid hsl(35deg 15% 82% / 20%);
+}
+
+nav.desktop {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .non-logo a {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: .85rem;
+    color: var(--text-color-secondary);
+    margin-left: 25px;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      color: var(--orange);
+    }
+  }
+
+  & .home-icon {
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
+    stroke: var(--orange);
+    fill: var(--orange);
+    height: 24px;
+  }
+}
+
+nav.mobile {
+  display: none;
+  padding: 20px;
+
+  & #menu-button {
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline-offset: -5px;
+    }
+
+    & .menu-icon {
+      height: 24px;
+      width: 24px;
+      fill: var(--orange);
+    }
+  }
+
+  #menu-dialog {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+    border: 5px solid var(--bg-color);
+
+    & #menu-close {
+      background-color: transparent;
+      color: var(--text-color);
+      border: none;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    & .nav-container {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--text-color-secondary);
+
+      & a:nth-child(n) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 18px;
+        border-bottom: 1px solid var(--text-color-secondary);
+      }
+
+      & .switch-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+
+        & .switch-container {
+          margin-left: 0;
+          padding-top: 15px;
+        }
+
+        & svg {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Class for preventing scrolling while modal is open */
+.modal-open {
+  overflow: hidden;
+}
+
+
+/* Nav Switches */
+.switch-container {
+  display: inline-block;
+  margin-left: 10px;
+
+  .switch-icon {
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 5px;
+    position: relative;
+    top: 5px;
+  }
+
+  .animation-icon {
+    fill: var(--animation-icon-fill);
+    stroke: var(--animation-icon-color);
+  }
+
+  .dark-mode-icon {
+    fill: var(--dark-mode-icon-fill);
+    stroke: var(--dark-mode-icon-color);
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+
+  &:focus-within {
+    outline-offset: 3px;
+    outline: 2px solid var(--outline-color);
+    border-radius: 15px;
+  }
+
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--slider-default-color);
+  transition: background-color 0.3s;
+  border-radius: 24px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--slider-handle-default-color);
+    transition: transform 0.3s;
+    border-radius: 50%;
+  }
+}
+
+input:checked + .slider {
+  background-color: var(--orange);
+  box-shadow: none;
+
+  &::before {
+    transform: translateX(24px);
+  }
+}

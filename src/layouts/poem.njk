@@ -1,0 +1,35 @@
+{% extends "base.njk" %}
+
+{% block title %}{{ title }} — My Poetry Site{% endblock %}
+
+{% block content %}
+<article>
+  <h1>{{ title }}</h1>
+  <p><time datetime="{{ date }}">{{ date | date("long") }}</time></p>
+
+  <section class="poem-content">
+    {{ content | safe }}
+  </section>
+
+  {% if audio %}
+  <audio controls preload="none" aria-label="Audio recording of {{ title }}">
+    <source src="{{ audio }}" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  {% endif %}
+
+  <nav class="poem-nav" aria-label="Navigate poems">
+    {% set poems = collections.poems %}
+    {% for poem in poems %}
+      {% if poem.url == url %}
+        {% if loop.index0 > 0 %}
+          <a href="{{ poems[loop.index0 - 1].url }}" rel="prev" aria-label="Previous poem">← Previous</a>
+        {% endif %}
+        {% if loop.index0 < poems.length - 1 %}
+          <a href="{{ poems[loop.index0 + 1].url }}" rel="next" aria-label="Next poem">Next →</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+</article>
+{% endblock %}

@@ -1,0 +1,25 @@
+{
+  "name": "poetry-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss src/css/main.css -o _site/css/main.css",
+    "start": "eleventy --serve --port=3000",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "postcss-import": "^16.1.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
+  }
+}
