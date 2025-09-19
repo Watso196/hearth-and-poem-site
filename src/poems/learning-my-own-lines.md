@@ -6,7 +6,7 @@ layout: poem.njk
 
 Learning your identity  
 After turning 20  
-Feels akint to  
+Feels akin to  
 Learning to read  
 While everyone you know  
 Watches  
